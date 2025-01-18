@@ -1,0 +1,58 @@
+% ファイルの大きさに合わせるために
+% 印刷時は「実際のサイズ」で印刷するように気をつけてください
+\documentclass[a4j]{jarticle}
+
+\usepackage{bxwareki}
+\usepackage[top=0.6cm, bottom=0cm, left=0cm, right=0cm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{plext}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\def\compyear{２０２２}% 修了年度(全角)
+
+\newcounter{titlelinenum}
+\setcounter{titlelinenum}{1}% タイトル行数
+\def\titlelineone{修士論文タイトル}
+\def\titlelinetwo{修士論文タイトル}% 2行目
+\def\titlelinethr{修士論文タイトル}% 3行目
+
+% 氏名・学籍番号
+\def\studentnumber{Ｂ０００００}% 学籍番号(全角)
+\def\studentlastname{氏}% 姓
+\def\studentfirstname{名}% 名
+
+% 背表紙の描画
+\def\coverwidth{13mm}
+\def\backcover
+{
+  \draw[draw=black] (0mm, 0mm) rectangle (\coverwidth, 285mm);
+  \draw (\coverwidth/2, 270mm) node[anchor=north] {\pbox<t>{\large \compyear 年度}};
+  \ifnum\thetitlelinenum=1
+  \draw (\coverwidth/2, 180mm) node[anchor=north] {\pbox<t>{\large \titlelineone}};
+  \else\ifnum\thetitlelinenum=2
+  \draw (\coverwidth/3*1, 180mm) node[anchor=north] {\pbox<t>{\large \titlelineone}};
+  \draw (\coverwidth/3*2, 180mm) node[anchor=north] {\pbox<t>{\large \titlelinetwo}};
+  \else\ifnum\thetitlelinenum=3
+  \draw (\coverwidth/4*1, 180mm) node[anchor=north] {\pbox<t>{\normalsize \titlelineone}};
+  \draw (\coverwidth/4*2, 180mm) node[anchor=north] {\pbox<t>{\normalsize \titlelinetwo}};
+  \draw (\coverwidth/4*3, 180mm) node[anchor=north] {\pbox<t>{\normalsize \titlelinethr}};
+  \fi\fi\fi
+  \draw (\coverwidth/2, 90mm) node[anchor=north] {\pbox<t>{\large \studentnumber}};
+  \draw (\coverwidth/2, 50mm) node[anchor=north] {\pbox<t>{\large \studentlastname　\studentfirstname}};
+}
+
+\begin{document}
+\centering
+\begin{tikzpicture}
+  \foreach \y in {0, 1, 2, 3}
+  {
+    \foreach \x in {0, 1, 2}
+    {
+      \begin{scope}[xshift=15mm*\x+50mm*\y]
+        \backcover
+      \end{scope}
+    }
+  }
+\end{tikzpicture}
+\end{document}

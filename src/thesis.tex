@@ -1,0 +1,87 @@
+\documentclass[dvipdfmx]{jreport}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[nobreak]{cite}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{listings}
+
+\usepackage{amsmath}
+\usepackage{xr}
+\usepackage{url}
+\usepackage{tabularx}
+\usepackage{placeins}
+\usepackage{float} 
+\usepackage{amsmath} 
+
+
+
+% セクションごとに浮動体を制限
+\let\oldsection\section
+\renewcommand{\section}{\FloatBarrier\oldsection}
+
+
+
+\providecommand{\newblock}{}
+
+\def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
+\def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
+\def\|{\verb|}
+
+\usepackage{caption}
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+\captionsetup{
+    justification=centering % キャプションを中央揃えにする
+}
+
+
+\pagestyle{headings}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+
+\topmargin=-14mm
+\headsep=15mm
+\textwidth=15.7cm
+\textheight=23.5cm
+\oddsidemargin=7.5mm
+\evensidemargin=7.5mm
+
+\begin{document}
+    \include{title}
+
+    \tableofcontents
+
+    \include{chap1}
+    \include{chap2}
+    \include{./3/index.tex}
+    \include{./4/index.tex}
+    \include{chap5}
+    \include{appendix}
+    \include{acknowledgement}
+    \include{achievements}
+    \include{reference}
+\end{document}
+

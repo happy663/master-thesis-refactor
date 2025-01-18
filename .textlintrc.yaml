@@ -1,0 +1,33 @@
+plugins:
+  - latex2e
+
+rules:
+  prh:
+    rulePaths:
+      - "./prh.yml"
+  ja-hiragana-fukushi: true
+  ja-hiragana-hojodoushi: true
+
+  preset-ja-technical-writing:
+    no-mix-dearu-desumasu: true
+    ja-no-mixed-period:
+      periodMark: "．"
+    max-kanji-continuous-len:
+      max: 8
+      allow:
+        - "倍精度浮動小数点数"
+    no-doubled-joshi: false
+    sentence-length: false
+    ja-no-redundant-expression:
+      dictOptions:
+        dict5:
+          disabled: true #[サ変名詞]を行うを無効
+
+  preset-japanese:
+    no-doubled-joshi:
+      min_interval: 1
+      allow:
+        - "が"
+    sentence-length:
+      severity: "warning"
+      max: 120
