@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "zsh -c 'textlint -plugin latex2e **/*.tex'",
-    "quickfix": "zsh -c 'textlint --format unix --plugin latex2e **/*.tex'",
-    "lint:fix": "textlint --fix **/*.tex",
+    "lint": "zsh -c 'textlint --plugin latex2e src/**/*.tex'",
+    "quickfix": "zsh -c 'textlint --format unix --plugin latex2e src/**/*.tex'",
+    "lint:fix": "zsh -c 'textlint --fix --plugin latex2e src/**/*.tex'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
