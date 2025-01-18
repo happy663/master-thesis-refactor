@@ -7,7 +7,7 @@
 節3.3では気圧データを用いた3次元的な位置推定について示す．
 % TODO: 2.PALKIAの名前を出してもいいかもしれない，本ライブラリの所を全てPALKIAで置き換える
 
-\input{./3/3.1/required.tex}
+\input{./chapter/3/3.1/required.tex}
 
 
 \section{xDR Challenge 2023環境における平面的な位置推定}
@@ -33,12 +33,13 @@ xDR Challenge 2023の環境は後述する評価システムが確立されて�
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\linewidth]{image/lidar.jpg}
+	\includegraphics[width=\linewidth]{../image/lidar.pdf}
 	\caption{歩行者の装着器具}    \label{fig:step_detect}
 \end{figure}
 
 
-\input{./3/3.2/3.2.1/pdr.tex}
+
+\input{./chapter/3/3.2/3.2.1/pdr.tex}
 
 
 \subsection{軌跡の補正}
@@ -48,14 +49,14 @@ PDR処理で得られた軌跡には，前節で示したように2つの主要�
 各補正手法は異なるアプローチで軌跡の改善を試みるが，
 これらを効果的に組み合わせることで，より高精度な位置推定が可能となる．
 
-\input{./3/3.2/3.2.2/correct_design.tex}
-\input{./3/3.2/3.2.2/remove_drift.tex}
-\input{./3/3.2/3.2.2/rotate_trajectory_map.tex}
-\input{./3/3.2/3.2.2/ble_position.tex}
-\input{./3/3.2/3.2.2/ble_fingerprint.tex}
-\input{./3/3.2/3.2.2/map_matching_unwalkble}
+\input{./chapter/3/3.2/3.2.2/correct_design.tex}
+\input{./chapter/3/3.2/3.2.2/remove_drift.tex}
+\input{./chapter/3/3.2/3.2.2/rotate_trajectory_map.tex}
+\input{./chapter/3/3.2/3.2.2/ble_position.tex}
+\input{./chapter/3/3.2/3.2.2/ble_fingerprint.tex}
+\input{./chapter/3/3.2/3.2.2/map_matching_unwalkble}
 
 \section{気圧データを用いた3次元的な位置推定}
 
-\input{./3/3.3/pressure.tex}
+\input{./chapter/3/3.3/pressure.tex}
 

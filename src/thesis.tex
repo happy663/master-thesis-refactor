@@ -1,6 +1,7 @@
 \documentclass[dvipdfmx]{jreport}
 
 
+
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -17,6 +18,7 @@
 \usepackage{placeins}
 \usepackage{float} 
 \usepackage{amsmath} 
+
 
 
 
@@ -70,18 +72,18 @@
 \evensidemargin=7.5mm
 
 \begin{document}
-    \include{title}
+    \include{./front_matter/title.tex}
 
     \tableofcontents
 
-    \include{chap1}
-    \include{chap2}
-    \include{./3/index.tex}
-    \include{./4/index.tex}
-    \include{chap5}
-    \include{appendix}
-    \include{acknowledgement}
-    \include{achievements}
-    \include{reference}
+    \include{./chapter/1/chap1.tex}
+    \include{./chapter/2/chap2.tex}
+    \include{./chapter/3/index.tex}
+    \include{./chapter/4/index.tex}
+    \include{./chapter/5/chap5.tex}
+    \include{./back_matter/appendix.tex}
+    \include{./back_matter/acknowledgement.tex}
+    \include{./back_matter/achievements.tex}
+    \include{./back_matter/reference.tex}
 \end{document}
 
