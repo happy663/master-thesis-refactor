@@ -45,7 +45,7 @@ BLEビーコンの受信信号強度の変異を利用した移動変異推定�
 PDRで生じる誤差の補正を実現している．
 
 建物の構造情報を利用する手法として，PDRとマップマッチングを組み合わせた
-研究\cite{pdr-map}\cite{additional-map-matching-paper}がある．
+研究\cite{pdr-map}がある．
 これらの研究では歩行可能な領域の情報を用いて軌跡を補正するだけでなく，
 歩幅の動的な更新や進行方向の補正なども行っている．また，3次元の位置推定
 として，気圧センサを組み合わせてフロア間移動の推定を行う研究\cite{pdr-wifi}\cite{pdr-stable}
@@ -61,7 +61,7 @@ PDRで生じる誤差の補正を実現している．
 
 \section{PDRライブラリ}
 
-PDRライブラリの実装として，まずOpenShoe\cite{openshoe}が挙げられる．
+PDRライブラリとして，OpenShoe\cite{openshoe}が挙げられる．
 OpenShoeはフットマウントIMUを用いたPDRシステムのオープンソース実装である．
 足の動きの直接計測によって高精度な歩行軌跡の推定を実現している．
 特徴的な点として，Zero Velocity Update (ZUPT)と呼ばれる手法を採用しており，
