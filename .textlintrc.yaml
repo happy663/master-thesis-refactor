@@ -16,6 +16,7 @@ rules:
       max: 8
       allow:
         - "倍精度浮動小数点数"
+        - "産業技術総合研究所"
     no-doubled-joshi: false
     sentence-length: false
     ja-no-redundant-expression:

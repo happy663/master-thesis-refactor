@@ -32,32 +32,32 @@ drift_corrector = DriftCorrector(
 )
 \end{lstlisting}
 
-
-
 DriftCorrectorクラスは，正解座標との比較に基づいて角速度データの累積誤差を
-補正する．この補正処理は以下の式で表される．
-
-\begin{equation}
-    \theta'(t) = \theta(t) - (d \times t)
-\end{equation}
-
-ここで，$\theta'(t)$は時間$t$における補正後の角度，$\theta(t)$は
+補正する．この補正処理は式\eqref{eq:drift_correction}で表される．
+$\theta'(t)$は時間$t$における補正後の角度，$\theta(t)$は
 補正前の角度，$d$はドリフトの大きさを表す．この式は時間経過に伴う
 ドリフトの累積効果を線形モデルで近似し，補正を行う．
 最適なドリフト値$d$の決定には，既知の座標との誤差を最小化するアプローチを
 採用している．具体的には，補正後の軌跡の終点と既知の座標との
-ユークリッド距離$E$を以下の式で計算する．
-
-\begin{equation}
-    E = \sqrt{(x_{n+1} - x_n)^2 + (y_{n+1} - y_n)^2}
-\end{equation}
-
-ここで，$(x_n, y_n)$は既知の座標，$(x_{n+1}, y_{n+1})$は補正された
+ユークリッド距離$E$を式\eqref{eq:euclidean_distance}で計算する．
+$(x_n, y_n)$は既知の座標，$(x_{n+1}, y_{n+1})$は補正された
 軌跡の終点を表す．DriftCorrectorはこの距離$E$が最小となるドリフト値をグリッドサーチにより探索する．
 探索範囲はデフォルトで[-0.02, 0.02] rad/sとしている．この範囲は一般的なMEMSジャイロセンサーの
 バイアス誤差の特性を考慮して設定されている．より大きな範囲を設定すると，
 センサーの誤差だけでなく，実際の方向転換まで補正してしまう可能性がある．
 また，この値の範囲は外部から変更可能であり，使用するセンサーの特性に応じて調整できる．
+
+\begin{equation}
+    \theta'(t) = \theta(t) - (d \times t)
+    \label{eq:drift_correction}
+\end{equation}
+
+
+\begin{equation}
+    E = \sqrt{(x_{n+1} - x_n)^2 + (y_{n+1} - y_n)^2}
+    \label{eq:euclidean_distance}
+\end{equation}
+
 
 % TODO:2.ここにパワポにあるようなグリードサーチしている感がある図を載せるといいかも
 
