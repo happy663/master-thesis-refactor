@@ -19,7 +19,7 @@ TrajectoryCorrectorを介して緩やかに結合され，保守性と拡張性�
 
 補正処理の柔軟な設定を可能にするため，TrajectoryCorrectorクラスは
 Builderパターンを採用している．
-これにより，複雑な補正処理の設定を直感的なインターフェースで提供が可能となっている．
+これにより，複雑な補正処理を直感的なインターフェースで設定できる．
 利用者はwith\_floor\_map()やwith\_wireless\_signal()などのメソッドチェーンを使用して
 利用可能な環境情報に応じて必要な補正手法を選択的に組み合わせられる．
 Listing\ref{lst:trajectory-corrector}にその例を示す．
