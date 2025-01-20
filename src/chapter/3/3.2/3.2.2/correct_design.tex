@@ -11,8 +11,8 @@ TrajectoryCorrectorを介して緩やかに結合され，保守性と拡張性�
 
 補正処理の柔軟な設定を可能にするため，TrajectoryCorrectorクラスは
 Builderパターンを採用している．
-これにより，複雑な補正処理の設直感的なインターフェースで提供が可能となっている．
-利用者はwith\_floor\_map()やwith\_ble\_data()などのメソッドチェーンを使用して
+これにより，複雑な補正処理の設定を直感的なインターフェースで提供が可能となっている．
+利用者はwith\_floor\_map()やwith\_wireless\_signal()などのメソッドチェーンを使用して
 利用可能な環境情報に応じて必要な補正手法を選択的に組み合わせられる．
 Listing\ref{lst:trajectory-corrector}にその例を示す．
 例のようにフロアマップのみが利用可能な環境では，MapMatchCorrectorによる補正のみを
@@ -20,15 +20,18 @@ Listing\ref{lst:trajectory-corrector}にその例を示す．
 また各補正クラスは単体でも使用可能であり，特定の補正処理
 のみを実行したい場合は，直接該当するクラスを利用を利用できる．
 
+
+% TODO: PDFに謎のBLEの文字がある
 \begin{lstlisting}[caption={TrajectoryCorrectorの使用例},label=lst:trajectory-corrector,float=h]
 # フロアマップのみを使用する場合
 corrector = TrajectoryCorrector.builder(pdr_estimator)
     .with_floor_map(floor_map)
     .build()
-# フロアマップとBLEビーコンを組み合わせる場合
+
+# フロアマップとBLE ビーコンを組み合わせる場合
 corrector = TrajectoryCorrector.builder(pdr_estimator)
     .with_floor_map(floor_map)
-    .with_ble_data(ble_scans beacon_positions)
+    .with_wireless_signal(ble_scans beacon_positions)
     .build()
 \end{lstlisting}
 
@@ -49,7 +52,7 @@ estimate\_and\_correct\_trajectoryメソッドを呼び出すと，指定され�
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{../image/corrector-class-diagram.pdf}
+    \includegraphics[width=\linewidth]{../image/trajectory_corrector.pdf}
     \caption{補正における主要クラス設計}
     \label{fig:corrector-class}
 \end{figure}
