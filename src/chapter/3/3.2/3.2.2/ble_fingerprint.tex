@@ -14,7 +14,7 @@
 計測された各送信機のID，電波強度，およびその計測位置の座標が
 記録されたデータベースである．重要な点として，この手法では基地局の
 正確な位置情報は必要としない．
-この手法の利用例をListing\ref{lst:rotate-trajectory-using-ble-fingerprint}に示す
+この手法の利用例をListing\ref{lst:rotate-trajectory-using-ble-fingerprint}に示す．
 
 % TODO:3 WiressSignalCorrectorが被ってるのでキャプション名を変更した方がいいかも
 \begin{lstlisting}[caption={WirelessSignalCorrectorの使用例},label=lst:rotate-trajectory-using-fingerprint,float=ht]
@@ -42,7 +42,7 @@ WirelessSignalCorrectorのFPを用いた補正処理は，以下のように行�
 
 各データポイントの重み$w$は，受信時刻$t$におけるRSSI値$r_t$と，
 FPデータベース内の同じビーコンのRSSI値$r_f$との差に基づいて，
-以下の式で計算される：
+以下の式で計算される．
 
 \begin{equation}
 w_t = \exp\left(-\frac{(r_t - r_f)^2}{2\sigma^2}\right)
@@ -54,7 +54,7 @@ w_t = \exp\left(-\frac{(r_t - r_f)^2}{2\sigma^2}\right)
 % TODO:2.パスロスモデルの比重も増やせる説明をした方がいいかも
 
 次に，これらの重みを用いて時刻$t$における推定位置$(p_x^t, p_y^t)$を
-以下の式で計算する
+以下の式で計算する．
 
 \begin{equation}
 p_x^t = \frac{\sum_{i=1}^{N_t} w_{t,i} x_i}{\sum_{i=1}^{N_t} w_{t,i}}, \quad

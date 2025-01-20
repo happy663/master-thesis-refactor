@@ -18,3 +18,9 @@ install:
 
 lint:
 	npm run lint
+
+lint-fix:
+	npm run lint:fix
+
+quickfix:
+	npm run quickfix
