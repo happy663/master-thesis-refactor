@@ -30,7 +30,7 @@
 % 座標$(x_t, y_t)$が歩行不可能な座標に存在する場合，その点からもっとも近い
 % 歩行可能な座標$(x_t^*, y_t^*)$を探索する．
 
-正処理は以下の手順で行われる．まず，軌跡上の各点について，
+補正処理は以下の手順で行われる．まず，軌跡上の各点について，
 その座標がフロアマップ上の歩行可能座標に存在するかを判定する．
 ある時刻$t$の座標$(x_t, y_t)$が歩行不可能な座標に存在する場合，
 その点からもっとも近い歩行可能な座標$(x_t^*, y_t^*)$を探索する．
@@ -63,5 +63,5 @@ x_k' = x_k + (x_t^* - x_t), \quad y_k' = y_k + (y_t^* - y_t) \quad (k \geq t)
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{../image/walkable-points.jpg}
-    \caption{歩行可能座標への移動適用後の軌跡}    \label{fig:walkable-points}
+    \caption{歩行可能座標への補正適用後の軌跡}    \label{fig:walkable-points}
 \end{figure}
