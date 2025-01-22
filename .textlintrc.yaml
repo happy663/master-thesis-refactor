@@ -17,6 +17,7 @@ rules:
       allow:
         - "倍精度浮動小数点数"
         - "産業技術総合研究所"
+        - "初期進行方向補正"
     no-doubled-joshi: false
     sentence-length: false
     ja-no-redundant-expression:
